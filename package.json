@@ -1,0 +1,67 @@
+{
+  "name": "peertube-plugin-nano-payments",
+  "description": "Accept Nano (XNO) cryptocurrency payments for premium video content",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Tigwyk",
+    "url": "https://github.com/tigwyk"
+  },
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "engine": {
+    "peertube": ">=5.0.0"
+  },
+  "keywords": [
+    "peertube-plugin",
+    "nano",
+    "xno",
+    "cryptocurrency",
+    "payments",
+    "premium"
+  ],
+  "clientScripts": [
+    {
+      "script": "./dist/client/common-client-plugin.js",
+      "scopes": [
+        "common"
+      ]
+    },
+    {
+      "script": "./dist/client/video-watch-client-plugin.js",
+      "scopes": [
+        "video-watch"
+      ]
+    },
+    {
+      "script": "./dist/client/video-edit-client-plugin.js",
+      "scopes": [
+        "video-edit"
+      ]
+    },
+    {
+      "script": "./dist/client/admin-plugin-client-plugin.js",
+      "scopes": [
+        "admin-plugin"
+      ]
+    }
+  ],
+  "css": [
+    "./assets/style.css"
+  ],
+  "translations": {
+    "en": "./languages/en.json"
+  },
+  "devDependencies": {
+    "@peertube/peertube-types": "^7.2.3",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "node-fetch": "^3.3.0"
+  }
+}
